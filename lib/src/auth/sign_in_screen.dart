@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:quitanda/src/auth/components/custom_text_field.dart';
 import 'package:quitanda/src/auth/sign_up_screen.dart';
+import 'package:quitanda/src/base/base_screen.dart';
 import 'package:quitanda/src/config/custom_colors.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -107,7 +108,13 @@ class SignInScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(18),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(builder: (c) {
+                              return const BaseScreen();
+                            }),
+                          );
+                        },
                         child: const Text(
                           'Entrar',
                           style: TextStyle(
